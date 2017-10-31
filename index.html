@@ -43,6 +43,10 @@ blockquote {
 
 <script type="text/javascript">
 
+function isCurrentlySuspended() {
+  return true;
+}
+
 function isDuringEnforcementPeriod(d) {
     return (d.getHours() >= 2) && (d.getHours() < 6);
 }
@@ -68,7 +72,11 @@ function updateMessage() {
 
     var month = next_enforcement.getMonth() + 1;
 
-    if ((month == 4 && next_enforcement.getDate() > 1) || (month > 4 && month < 11)) {
+    if (isCurrentlySuspended()) {
+        // not in effect
+        message = "You can park<br/>wherever you want!";
+        submessage = "Odd/Even Parking rules are currently suspended! <br/> <br/> (Please see <a href=\"http://www.cityofithaca.org/CivicAlerts.aspx?AID=154\">this notice from the city</a> for more information</a> and <b>be sure to sign up for the Swift911 notification system</b> because the rules may go back into effect in the case of inclement weather.)"
+    } else if ((month == 4 && next_enforcement.getDate() > 1) || (month > 4 && month < 11)) {
         // not in effect
         message = "You can park<br/>wherever you want!";
         submessage = "Odd/Even Parking is not currently in effect. <br/> (It will begin the night of 10/31.)"
