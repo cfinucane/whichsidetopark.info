@@ -75,7 +75,7 @@ function updateMessage() {
     if (isCurrentlySuspended()) {
         // not in effect
         message = "You can park<br/>wherever you want!";
-        submessage = "Odd/Even Parking rules are currently suspended! <br/> <br/> (Please see <a href=\"http://www.cityofithaca.org/CivicAlerts.aspx?AID=154\">this notice from the city</a> for more information</a> and <b>be sure to sign up for the Swift911 notification system</b> because the rules may go back into effect in the case of inclement weather.)"
+        submessage = "Odd/Even Parking rules are currently suspended! <br/> <br/> (Please see <a href=\"http://www.cityofithaca.org/CivicAlerts.aspx?AID=154\">this notice from the city</a> for more information</a> and <b>be sure to <a href=\"http://www.cityofithaca.org/617/Emergency-Notification\">sign up</a> for the Swift911 notification system</b> because the rules may go back into effect in the case of inclement weather.)"
     } else if ((month == 4 && next_enforcement.getDate() > 1) || (month > 4 && month < 11)) {
         // not in effect
         message = "You can park<br/>wherever you want!";
